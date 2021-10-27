@@ -36,6 +36,7 @@ const walls = [
 
 World.add(world, walls);
 
+
 //Maze generation
 
 const shuffle = (arr) =>{
@@ -54,7 +55,7 @@ const shuffle = (arr) =>{
 const grid = Array(cellsVertical)
     .fill(null)
     .map(() => Array(cellsHorizontal).fill(false));
-    //.map() will access to each element and create new elements(here is 'arrays')
+    //.map() will iterate each element and create new elements(here is 'arrays')
 
 const verticals = Array(cellsVertical)
     .fill(null)
@@ -123,7 +124,7 @@ horizontals.forEach((row, rowIndex )=> {
             columnIndex * unitLengthX + unitLengthX / 2,
             rowIndex * unitLengthY + unitLengthY,
             unitLengthX,
-            10,
+            5,
             {
                 label: 'wall',
                 isStatic: true,
@@ -138,14 +139,14 @@ horizontals.forEach((row, rowIndex )=> {
 
 verticals.forEach((row, rowIndex) =>{
     row.forEach((open, columnIndex) =>{
-        if(open){
+        if(open === true){
             return;
         }
         //If the element is 'False'
         const wall = Bodies.rectangle(
             columnIndex * unitLengthX + unitLengthX,
             rowIndex * unitLengthY + unitLengthY / 2,
-            10,
+            5,
             unitLengthY,
             
             {
@@ -206,3 +207,7 @@ Events.on(engine,'collisionStart', event =>{
         }
     });
 });
+
+
+
+
