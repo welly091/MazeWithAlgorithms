@@ -209,5 +209,19 @@ Events.on(engine,'collisionStart', event =>{
 });
 
 
-
+document.getElementById("ok").addEventListener("click",function(){
+    let x = document.getElementById("welcome");
+    let selectAlgo = document.getElementsByName("algorithm");
+        for(let i = 0; i < selectAlgo.length; i++){
+            if(selectAlgo[i].checked){
+                if(selectAlgo[i].value == 1){
+                    x.style.display="none";
+                    bfs(0,0);
+                }else if(selectAlgo[i].value == 2){
+                    x.style.display= "none";
+                    dfs(0,0);
+                }
+            } 
+        }
+});
 

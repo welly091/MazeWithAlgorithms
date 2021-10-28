@@ -6,10 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.js"></script>
     <title>Solve The Maze</title>
+    <style>
+        #welcome{
+            display: block;
+            position: absolute;
+            background-color: white;
+            border: 5px solid gray;
+            text-align: center;
+            width: 200px;
+            height:200px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            bottom:0;
+            top:0;
+            left:0;
+            right:0;    
+            border-radius: 4px;        
+        }
+        #ok{
+            color: white;
+            background-color: black;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        input[type='radio']{
+            background-color: green;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="dialog" id="welcome" >
+        <h1>Welcome!</h1>
+        <div>
+            <input type='radio' name='algorithm' value=1 /> Breadth-First Search
+        </div>
+        <div>
+            <input type='radio' name='algorithm' value=2 /> Depth-First Search 
+        </div>
+        <div>
+            <button id="ok"> Go </button>
+        </div>
+    </div>
     <script src="maze.js"></script>
     <script src="bfs.js"></script>
+    <script src="dfs.js"></script>
 </body>
 </html>
